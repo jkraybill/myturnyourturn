@@ -12,9 +12,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #0a0a0a;
-            color: #fff;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #1a1f2e;
+            color: #ffffff;
             overflow: hidden;
         }
 
@@ -22,11 +22,11 @@
             display: none;
             width: 100vw;
             height: 100vh;
-            padding: 60px 80px;
+            padding: 80px 100px;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 100%);
         }
 
         .slide.active {
@@ -34,41 +34,38 @@
         }
 
         h1 {
-            font-size: 5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 40px;
-            background: linear-gradient(135deg, #00ff88 0%, #00ccff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #4a90e2;
         }
 
         h2 {
             font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: #00ff88;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #ffffff;
         }
 
         h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            margin-top: 40px;
-            color: #00ccff;
+            margin-bottom: 15px;
+            margin-top: 30px;
+            color: #6ba3e8;
         }
 
         p, li {
-            font-size: 1.8rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #e0e0e0;
+            font-size: 1.6rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: #d4d4d8;
         }
 
         strong {
-            color: #00ff88;
-            font-weight: 700;
+            color: #ffffff;
+            font-weight: 600;
         }
 
         ul {
@@ -77,25 +74,26 @@
         }
 
         li::before {
-            content: "→ ";
-            color: #00ff88;
+            content: "• ";
+            color: #4a90e2;
             font-weight: bold;
             margin-right: 10px;
         }
 
         .big-number {
-            font-size: 8rem;
-            font-weight: 900;
-            color: #00ff88;
+            font-size: 7rem;
+            font-weight: 700;
+            color: #4a90e2;
             line-height: 1;
-            margin: 40px 0;
+            margin: 30px 0;
         }
 
         .highlight-box {
-            background: rgba(0, 255, 136, 0.1);
-            border-left: 4px solid #00ff88;
+            background: rgba(74, 144, 226, 0.15);
+            border-left: 4px solid #4a90e2;
             padding: 30px;
             margin: 30px 0;
+            border-radius: 4px;
         }
 
         .vs-box {
@@ -107,17 +105,18 @@
         }
 
         .vs-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.06);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .vs-item.bad {
-            border: 2px solid #ff4444;
+            border-color: #e74c3c;
         }
 
         .vs-item.good {
-            border: 2px solid #00ff88;
+            border-color: #4a90e2;
         }
 
         .navigation {
@@ -130,40 +129,42 @@
         }
 
         .nav-btn {
-            background: rgba(0, 255, 136, 0.2);
-            border: 2px solid #00ff88;
-            color: #00ff88;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            background: rgba(74, 144, 226, 0.2);
+            border: 2px solid #4a90e2;
+            color: #4a90e2;
+            padding: 12px 28px;
+            font-size: 1.1rem;
             cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-weight: 500;
         }
 
         .nav-btn:hover {
-            background: #00ff88;
-            color: #0a0a0a;
+            background: #4a90e2;
+            color: #ffffff;
         }
 
         .slide-counter {
             position: fixed;
             bottom: 40px;
             left: 40px;
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.1rem;
+            color: #6b7280;
+            font-weight: 500;
         }
 
         .subtitle {
-            font-size: 2.5rem;
-            color: #aaa;
-            font-weight: 300;
-            margin-top: -20px;
+            font-size: 2rem;
+            color: #9ca3af;
+            font-weight: 400;
+            margin-top: -10px;
             margin-bottom: 40px;
         }
 
         .emoji {
-            font-size: 6rem;
-            margin: 40px 0;
+            font-size: 5rem;
+            margin: 30px 0;
         }
 
         @media print {
@@ -182,289 +183,242 @@
 
 <!-- Slide 1: Title -->
 <div class="slide active">
-    <h1>We Built a $25k App<br>for $50</h1>
-    <p class="subtitle">How Respecting Craftsmanship Creates Sustainable Competitive Advantages</p>
+    <h1>I Spent $50 on an AI<br>and Got a $25,000 App</h1>
+    <p class="subtitle">My 8-year-old could probably replicate this.*</p>
+    <p style="font-size: 1.2rem; color: #6b7280; margin-top: 60px;">*Assuming she learns to code, understands OAuth, and stops asking for screen time every 5 minutes.</p>
 </div>
 
 <!-- Slide 2: The Hook -->
 <div class="slide">
-    <h2>We Built This In 8 Hours</h2>
+    <h2>No Really, Here's What We Built</h2>
     <ul>
         <li>OAuth login (Google/Meta/Apple)</li>
         <li>PostgreSQL database</li>
-        <li><strong>46 automated tests</strong> (100% passing)</li>
-        <li>Mobile-responsive UI</li>
-        <li>Complete deployment docs</li>
+        <li><strong>46 automated tests</strong> (all passing)</li>
+        <li>Mobile UI</li>
+        <li>Deployment docs</li>
     </ul>
-    <div class="highlight-box">
-        <p><strong>Cost:</strong> $50 in API calls</p>
-        <p><strong>Traditional cost:</strong> $15-25k</p>
-        <p><strong>ROI:</strong> <span class="big-number" style="font-size: 4rem; display: inline;">300:1</span></p>
+    <div class="highlight-box" style="margin-top: 50px;">
+        <p><strong>Time:</strong> 8 hours</p>
+        <p><strong>Cost:</strong> $50</p>
+        <p><strong>Market rate for this:</strong> $15-25k</p>
+        <div style="margin-top: 30px; padding-top: 30px; border-top: 2px solid rgba(74, 144, 226, 0.3);">
+            <p style="font-size: 2rem;"><strong>ROI: 300:1</strong></p>
+        </div>
     </div>
 </div>
 
-<!-- Slide 3: Why You Should Care -->
+<!-- Slide 3: The Money Slide -->
 <div class="slide">
-    <h2>Your Portfolio Burns Money on Software</h2>
-    <p style="font-size: 2.5rem; color: #00ff88; margin: 40px 0;"><strong>Property management SaaS:</strong> $100-300/unit/year</p>
-    <div class="big-number">$100k/year</div>
-    <p style="font-size: 2rem;">for 500 units. Forever.</p>
-    <div style="margin-top: 60px;">
-        <p><strong>Our play:</strong> Build custom for $10k one-time</p>
-        <p><strong>Year 1 savings:</strong> $90k</p>
-        <p><strong>5-year savings:</strong> <span style="color: #00ff88; font-size: 2.5rem;">$480k</span></p>
-        <p style="margin-top: 40px; font-size: 2.5rem;">Per property.</p>
+    <h2>Your Portfolio Companies Pay Too Much for Software</h2>
+    <div style="margin-top: 50px;">
+        <p style="font-size: 1.8rem;">Typical mid-market company:</p>
+        <div class="big-number">$150k/year</div>
+        <p style="font-size: 1.6rem; margin-top: -20px;">on SaaS subscriptions. Every year. Forever.</p>
     </div>
-</div>
-
-<!-- Slide 4: The Real Game -->
-<div class="slide">
-    <h2>Exit Multiples > Operating Income</h2>
-    <p style="font-size: 2.2rem; margin: 40px 0;">Properties with custom tech stacks trade at <strong style="font-size: 3rem;">1.5-2x</strong> premium</p>
-    <div class="highlight-box">
-        <ul style="font-size: 1.6rem;">
-            <li>Acquire 200-unit property</li>
-            <li>Spend $15k building custom management system</li>
-            <li>At exit: "Includes proprietary tech stack"</li>
-        </ul>
-        <p style="font-size: 3rem; margin-top: 40px; color: #00ff88;"><strong>$15k → $1.5M valuation bump</strong></p>
-    </div>
-    <p style="font-size: 2.5rem; margin-top: 40px;">That's <strong>free money at close.</strong></p>
-</div>
-
-<!-- Slide 5: Value Distribution -->
-<div class="slide">
-    <h2>Pay Builders, Not Rent-Seekers</h2>
-    <div class="vs-box">
+    <div class="vs-box" style="margin-top: 60px;">
         <div class="vs-item bad">
-            <h3 style="color: #ff4444; font-size: 1.5rem;">SaaS Rental Model:</h3>
-            <ul style="font-size: 1.3rem;">
-                <li>$50-200k/year perpetually</li>
-                <li>Most cost = marketing/sales</li>
-                <li>Builders underpaid</li>
-                <li>You can't modify</li>
-                <li>Annual price increases</li>
-                <li>No IP ownership</li>
-            </ul>
+            <h3 style="color: #e74c3c;">The Old Way</h3>
+            <p>$150k/year subscription</p>
+            <p>5-year cost: <strong>$750k</strong></p>
         </div>
         <div class="vs-item good">
-            <h3 style="color: #00ff88; font-size: 1.5rem;">Direct Build Model:</h3>
-            <ul style="font-size: 1.3rem;">
-                <li>$5-15k one-time</li>
-                <li>All cost = actual building</li>
-                <li>Fair compensation to labor</li>
-                <li>You control roadmap</li>
-                <li>No recurring extraction</li>
-                <li>Own the IP forever</li>
-            </ul>
+            <h3>Build It Once</h3>
+            <p>$10k to build custom</p>
+            <p>5-year cost: <strong>$12k</strong></p>
         </div>
     </div>
-    <p style="font-size: 2.2rem; margin-top: 40px; text-align: center;"><strong>Reward craftsmanship, not middlemen</strong></p>
+    <p style="margin-top: 40px; font-size: 2rem; text-align: center;"><strong>That's $738k saved. Per company.</strong></p>
+</div>
+
+<!-- Slide 4: The Exit Play -->
+<div class="slide">
+    <h2>But Wait, There's More</h2>
+    <p style="font-size: 1.8rem; margin: 40px 0;">Companies with custom tech sell at higher multiples.</p>
+    <div class="highlight-box">
+        <p style="font-size: 1.5rem; margin-bottom: 20px;">Example: $5M EBITDA company</p>
+        <ul style="font-size: 1.4rem;">
+            <li>Standard multiple: 6x = $30M</li>
+            <li>With proprietary tech: 7-8x = $35-40M</li>
+        </ul>
+        <div style="margin-top: 30px; padding-top: 30px; border-top: 2px solid rgba(74, 144, 226, 0.3);">
+            <p style="font-size: 2.5rem;"><strong>$5-10M extra at exit</strong></p>
+            <p style="font-size: 1.4rem; margin-top: 15px;">From a $15k investment.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: The Pitch -->
+<div class="slide">
+    <h2>Here's What We're Actually Proposing</h2>
+    <div style="margin-top: 50px;">
+        <h3>Phase 1: Proof ($0 - Done)</h3>
+        <p>Built a working app. You're looking at it.</p>
+
+        <h3 style="margin-top: 50px;">Phase 2: Pilot ($25k)</h3>
+        <p>Pick one pain point. We build a replacement. 4-6 weeks.</p>
+        <p style="color: #4a90e2;"><strong>Guarantee: 5x ROI in Year 1 or we refund 50%</strong></p>
+
+        <h3 style="margin-top: 50px;">Phase 3: Scale ($250k)</h3>
+        <p>We become your build partner for 2-3 years.</p>
+        <p style="color: #4a90e2;"><strong>Expected return: $1-3M across portfolio</strong></p>
+    </div>
+    <div class="highlight-box" style="margin-top: 50px;">
+        <p style="text-align: center; font-size: 1.8rem;">Downside: $12.5k if Phase 2 fails</p>
+        <p style="text-align: center; font-size: 1.8rem; margin-top: 10px;">Upside: Stop lighting money on fire</p>
+    </div>
 </div>
 
 <!-- Slide 6: How It Works -->
 <div class="slide">
-    <h2>Quality Through Structure, Not Through Luck</h2>
+    <h2>How This Actually Works</h2>
     <div style="margin-top: 40px;">
-        <h3>Constitutional Rules</h3>
-        <p>AI is bound by the same engineering discipline as senior developers: tests required, data integrity enforced, no shortcuts permitted</p>
+        <h3>AI Can't Cut Corners</h3>
+        <p>Tests required. Data integrity enforced. Code doesn't commit if tests fail.</p>
 
-        <h3>46/46 Tests Passing</h3>
-        <p>Not aspirational. Architectural. Code doesn't commit if tests fail.</p>
+        <h3>Enterprise Patterns</h3>
+        <p>Same tech stack as Netflix/Uber. Not cutting edge, proven.</p>
 
-        <h3>Production Patterns</h3>
-        <p>Netflix/Uber/Notion tech stack from day 1</p>
+        <h3>8 Hours, Not 8 Weeks</h3>
+        <p>Because we're not starting from scratch every time.</p>
     </div>
     <div class="highlight-box" style="margin-top: 60px;">
-        <p style="font-size: 2rem;"><strong>Result:</strong> Software craftsmanship at AI speed. Quality work, fairly compensated, economically viable.</p>
+        <p style="font-size: 1.8rem;">Translation: Fast development. Production quality. No surprises.</p>
     </div>
 </div>
 
-<!-- Slide 7: Three Phases -->
+<!-- Slide 7: Real Example -->
 <div class="slide">
-    <h2>Three Phases, Clear ROI</h2>
-    <div style="margin-top: 40px;">
-        <h3>Phase 1: Proof ($0 - DONE ✓)</h3>
-        <p>Built working app in 8 hours. You're looking at the proof.</p>
-
-        <h3 style="margin-top: 50px;">Phase 2: Pilot ($25k)</h3>
-        <p>Pick your biggest SaaS pain point • 4-6 weeks</p>
-        <p style="color: #00ff88; font-size: 2rem;"><strong>5x ROI in Year 1 or refund 50%</strong></p>
-
-        <h3 style="margin-top: 50px;">Phase 3: Scale ($250k)</h3>
-        <p>Technology partner for acquisitions • 2-3 years</p>
-        <p style="color: #00ff88; font-size: 2rem;"><strong>Expected value: $1-3M across portfolio</strong></p>
-        <p style="margin-top: 20px;">That's 4-12x return.</p>
-    </div>
-</div>
-
-<!-- Slide 8: Real Example -->
-<div class="slide">
-    <h2>Compliance Tracker Example</h2>
+    <h2>Real Example: Compliance Tracker</h2>
     <div class="vs-box">
         <div class="vs-item bad">
-            <h3 style="color: #ff4444;">Vendor Quote</h3>
-            <div class="big-number" style="font-size: 4rem;">$75-150k</div>
+            <h3 style="color: #e74c3c;">Vendor Quote</h3>
+            <div class="big-number" style="font-size: 4rem;">$75k</div>
         </div>
         <div class="vs-item good">
-            <h3 style="color: #00ff88;">Gordo Approach</h3>
-            <div class="big-number" style="font-size: 4rem;">$5-10k</div>
+            <h3>Our Build</h3>
+            <div class="big-number" style="font-size: 4rem;">$8k</div>
         </div>
     </div>
     <div style="margin-top: 40px;">
-        <p><strong>Features:</strong> Regulatory deadlines • Document chain • Automated reminders • Audit trail</p>
-        <p style="margin-top: 40px;"><strong>Modify when regulations change:</strong> Days, not vendor roadmap years</p>
-        <p style="font-size: 2.5rem; margin-top: 40px; color: #00ff88;"><strong>ROI: 7-15x in Year 1</strong></p>
-        <p style="margin-top: 20px;">Then you own it. Deploy to every property. <strong>Zero marginal cost.</strong></p>
+        <p>Regulatory deadlines. Document tracking. Automated reminders. Audit trail.</p>
+        <p style="margin-top: 30px;">When regulations change? Update in days, not "Q3 roadmap pending prioritization."</p>
+        <p style="font-size: 2rem; margin-top: 40px; text-align: center;"><strong>You own it. Deploy everywhere. No per-seat fees.</strong></p>
     </div>
 </div>
 
-<!-- Slide 9: Competitive Moat -->
+<!-- Slide 8: The Obvious Question -->
 <div class="slide">
-    <h2>The Competitive Moat</h2>
-    <div class="vs-box">
-        <div class="vs-item">
-            <h3>Most Property Investors Compete On:</h3>
-            <ul>
-                <li>Deal sourcing</li>
-                <li>Financing terms</li>
-                <li>Market timing</li>
-            </ul>
-        </div>
-        <div class="vs-item good">
-            <h3>You'd Compete On:</h3>
-            <p style="font-size: 2rem; color: #00ff88;"><strong>Operational efficiency through owned technology</strong></p>
-        </div>
-    </div>
-    <div class="highlight-box" style="margin-top: 40px;">
-        <p>Competitor pays <strong>$50k/year</strong> in SaaS + staff time</p>
-        <p>You pay <strong>$15k one-time</strong> + $40/month hosting</p>
-        <p style="font-size: 2rem; margin-top: 20px; color: #00ff88;"><strong>$35k/year advantage → straight to NOI</strong></p>
-    </div>
-    <p style="margin-top: 40px; font-size: 2rem;">Higher NOI = Higher valuation = Better exit</p>
-</div>
-
-<!-- Slide 10: Strategic Infrastructure -->
-<div class="slide">
-    <h2>Investing in Capability, Not Lottery Tickets</h2>
-    <div class="vs-box">
-        <div class="vs-item bad">
-            <h3 style="color: #ff4444;">Speculative Capital</h3>
-            <p>Fund 10 startups, hope 1 returns the fund. Most value captured by later investors. Labor often squeezed.</p>
-        </div>
-        <div class="vs-item good">
-            <h3 style="color: #00ff88;">Strategic Infrastructure</h3>
-            <ul style="font-size: 1.4rem;">
-                <li>Build internal capability</li>
-                <li>Improves ALL portfolio companies</li>
-                <li>Fair compensation to builders</li>
-                <li>Own the IP permanently</li>
-                <li>Regulatory agility</li>
-                <li>Sustainable advantages</li>
-            </ul>
-        </div>
-    </div>
-    <p style="font-size: 2.5rem; margin-top: 60px; text-align: center;"><strong>This isn't speculation. This is infrastructure.</strong></p>
-    <p style="font-size: 1.8rem; margin-top: 20px; text-align: center;">Like building a skilled in-house team, but with AI leverage.</p>
-    <p style="font-size: 1.8rem; text-align: center;">$250k investment. Durable competitive advantages.</p>
-</div>
-
-<!-- Slide 11: The Clock -->
-<div class="slide">
-    <h2>Your Competitors Are Figuring This Out</h2>
-    <p style="font-size: 2rem; margin: 40px 0;">First movers get:</p>
-    <ul style="font-size: 1.8rem;">
-        <li>Operational advantages NOW</li>
-        <li>IP ownership (deploy across portfolio)</li>
-        <li>Exit multiple enhancement</li>
-        <li>Vendor independence</li>
-    </ul>
-    <div class="highlight-box" style="margin-top: 60px;">
-        <p style="font-size: 2rem;"><strong>You're holding proof it works.</strong></p>
-        <p style="margin-top: 20px;">Most investors will wait until "AI is proven."</p>
-        <p style="font-size: 2.5rem; margin-top: 40px; color: #00ff88;">You have proof. In production. With tests.</p>
-    </div>
-    <p style="font-size: 2rem; margin-top: 60px;">The question isn't "will this work?"</p>
-    <p style="font-size: 2.5rem; color: #00ff88;"><strong>The question is "how much advantage do we want before everyone else figures it out?"</strong></p>
-</div>
-
-<!-- Slide 12: The Ask -->
-<div class="slide">
-    <h2>Phase 2 Pilot: $25k</h2>
-    <div style="margin-top: 40px;">
-        <p style="font-size: 2rem; margin-bottom: 30px;"><strong>What you get:</strong></p>
-        <ul>
-            <li>4-6 weeks development time</li>
-            <li>Pick one pain point (compliance? tenant portal? inspections?)</li>
-            <li>Full deployment + training</li>
-            <li>Live in production</li>
+    <h2>"Why Hasn't Everyone Done This?"</h2>
+    <div style="margin-top: 60px;">
+        <p style="font-size: 1.8rem;">Good question. Three reasons:</p>
+        <ul style="margin-top: 40px; font-size: 1.6rem;">
+            <li>Most companies don't know it's possible</li>
+            <li>Most dev shops quote $100k+ because they can</li>
+            <li>AI tools without guardrails ship garbage</li>
         </ul>
-
-        <div class="highlight-box" style="margin-top: 60px;">
-            <p style="font-size: 2.5rem; color: #00ff88;"><strong>The guarantee: 5x ROI in Year 1 or we refund 50%</strong></p>
-        </div>
-
-        <div style="margin-top: 60px;">
-            <p><strong>Your downside risk:</strong> $12.5k to prove this works or doesn't</p>
-            <p style="margin-top: 20px;"><strong>Your upside:</strong> Stop burning $50-200k/year on SaaS you could own</p>
-        </div>
+    </div>
+    <div class="highlight-box" style="margin-top: 60px;">
+        <p style="font-size: 1.8rem;">We figured out how to make AI ship quality fast.</p>
+        <p style="font-size: 1.8rem; margin-top: 15px;">Your competitors will figure this out eventually.</p>
+        <p style="font-size: 2rem; margin-top: 30px; color: #4a90e2;"><strong>Question is: do you want a 2-year head start?</strong></p>
     </div>
 </div>
 
-<!-- Slide 13: Control -->
+<!-- Slide 9: The Numbers -->
 <div class="slide">
-    <h2>This Isn't Just About Saving Money</h2>
-    <p style="font-size: 3rem; margin: 60px 0; color: #00ff88;"><strong>It's about aligned incentives.</strong></p>
-    <div style="font-size: 1.8rem;">
-        <p>When regulations change → <strong>YOU</strong> update YOUR tools in days (not vendor roadmap years)</p>
-        <p style="margin-top: 30px;">When you need a feature → <strong>YOU</strong> build it (compensating actual builders, not sales teams)</p>
-        <p style="margin-top: 30px;">When exit time comes → <strong>YOU</strong> own proprietary technology (rewarding your investment in quality)</p>
+    <h2>Let's Do Some Math</h2>
+    <div style="margin-top: 50px;">
+        <p style="font-size: 1.6rem;">Your portfolio: 10 companies</p>
+        <p style="font-size: 1.6rem; margin-top: 20px;">Each burns $150k/year on SaaS</p>
+        <p style="font-size: 1.6rem; margin-top: 20px;">Replace 3 systems per company</p>
+    </div>
+    <div class="highlight-box" style="margin-top: 50px;">
+        <p style="font-size: 1.8rem;"><strong>Old way:</strong> $1.5M/year across portfolio</p>
+        <p style="font-size: 1.8rem; margin-top: 20px;"><strong>New way:</strong> $300k one-time build</p>
+        <div style="margin-top: 40px; padding-top: 30px; border-top: 2px solid rgba(74, 144, 226, 0.3);">
+            <p style="font-size: 2.5rem; text-align: center;"><strong>Year 1: $1.2M saved</strong></p>
+            <p style="font-size: 2.5rem; text-align: center; margin-top: 15px;"><strong>5 years: $7.2M saved</strong></p>
+        </div>
+    </div>
+    <p style="margin-top: 40px; text-align: center; font-size: 1.4rem; color: #9ca3af;">Plus the exit multiple bump on each company.</p>
+</div>
+
+<!-- Slide 10: The Risk -->
+<div class="slide">
+    <h2>"What's the Catch?"</h2>
+    <div style="margin-top: 60px;">
+        <p style="font-size: 1.8rem;">Honest answer: Three risks.</p>
+        <ul style="margin-top: 40px; font-size: 1.6rem;">
+            <li>This is new. Not battle-tested at scale yet.</li>
+            <li>Your team needs to trust the process.</li>
+            <li>We might build something that works but you hate.</li>
+        </ul>
+    </div>
+    <div class="highlight-box" style="margin-top: 60px;">
+        <p style="font-size: 1.8rem;">That's why we're offering a pilot with a guarantee.</p>
+        <p style="font-size: 1.8rem; margin-top: 20px;">$25k. 4-6 weeks. One tool.</p>
+        <p style="font-size: 2rem; margin-top: 30px; color: #4a90e2;"><strong>5x ROI in Year 1 or we refund 50%</strong></p>
+    </div>
+    <p style="margin-top: 50px; text-align: center; font-size: 1.6rem;">Worst case: You're out $12.5k and know this doesn't work for you.</p>
+    <p style="text-align: center; font-size: 1.6rem; margin-top: 15px;">Best case: You save $125k+ per year. Forever.</p>
+</div>
+
+<!-- Slide 11: Social Proof Would Go Here -->
+<div class="slide">
+    <h2>Who Else Is Doing This?</h2>
+    <div style="margin-top: 80px; text-align: center;">
+        <p style="font-size: 3rem; color: #4a90e2;">¯\_(ツ)_/¯</p>
+        <p style="font-size: 2rem; margin-top: 60px;">Nobody yet.</p>
+        <p style="font-size: 1.8rem; margin-top: 30px; color: #9ca3af;">Which is either the best reason to do it,</p>
+        <p style="font-size: 1.8rem; color: #9ca3af;">or the best reason not to.</p>
     </div>
     <div class="highlight-box" style="margin-top: 80px;">
-        <p style="font-size: 2rem;">Software should serve operators, not extract rents from them.</p>
-        <p style="font-size: 2.5rem; margin-top: 40px; color: #00ff88;"><strong>This aligns capital with labor.</strong></p>
-        <p style="margin-top: 20px; font-style: italic;">Fair compensation to builders. Sustainable advantages to operators. Value creation, not extraction.</p>
+        <p style="font-size: 1.8rem; text-align: center;">We're betting you're the kind of investor who sees a 300:1 ROI proof-of-concept</p>
+        <p style="font-size: 1.8rem; text-align: center; margin-top: 15px;">and thinks "let's test this" not "let's wait and see."</p>
     </div>
 </div>
 
-<!-- Slide 14: Bottom Line -->
+<!-- Slide 12: The Close -->
 <div class="slide">
-    <h2>The Bottom Line</h2>
-    <div style="margin-top: 40px;">
-        <h3>We Built Proof</h3>
-        <ul>
-            <li>Working app: github.com/jkraybill/myturnyourturn</li>
-            <li>46/46 tests passing</li>
-            <li>Production-ready</li>
-            <li>Cost: $50</li>
-        </ul>
+    <h2>So Here's The Actual Ask</h2>
+    <div style="margin-top: 50px;">
+        <p style="font-size: 1.8rem;"><strong>Pilot: $25k</strong></p>
+        <p style="margin-top: 10px;">One tool. 4-6 weeks. Full deployment.</p>
+        <p style="margin-top: 10px; color: #4a90e2;">5x ROI guarantee or 50% refund.</p>
 
-        <h3 style="margin-top: 50px;">You Have Opportunity</h3>
-        <ul>
-            <li>$50-200k/year SaaS expenses across portfolio</li>
-            <li>Every one is a 10x savings opportunity</li>
-            <li>Plus exit multiple enhancement</li>
-            <li>Plus IP ownership</li>
+        <p style="font-size: 1.8rem; margin-top: 50px;"><strong>If it works: $250k scale partnership</strong></p>
+        <p style="margin-top: 10px;">2-3 years. All portfolio companies.</p>
+        <p style="margin-top: 10px; color: #4a90e2;">Expected return: $1-3M in savings + exit bumps.</p>
+    </div>
+    <div class="highlight-box" style="margin-top: 60px;">
+        <p style="text-align: center; font-size: 2rem;"><strong>Next step: Pick a pain point</strong></p>
+        <p style="text-align: center; margin-top: 20px; font-size: 1.6rem;">What's the SaaS bill that makes you wince every quarter?</p>
+    </div>
+</div>
+
+<!-- Slide 13: Final -->
+<div class="slide">
+    <h1>Thanks for Reading This Far</h1>
+    <p class="subtitle" style="margin-top: 40px;">Most people tap out at slide 4.</p>
+    <div style="margin-top: 80px;">
+        <p style="font-size: 1.8rem;">Here's what you know now:</p>
+        <ul style="margin-top: 30px; font-size: 1.6rem;">
+            <li>We built production software for $50 that normally costs $25k</li>
+            <li>Your portfolio probably burns $1-3M/year on SaaS</li>
+            <li>Most of it could be custom-built for 10-20x less</li>
+            <li>Companies with owned tech sell for more</li>
         </ul>
     </div>
     <div class="highlight-box" style="margin-top: 60px;">
-        <p style="font-size: 2.5rem; text-align: center;"><strong>Let's Build Competitive Advantages Before The Big Guys Wake Up</strong></p>
+        <p style="text-align: center; font-size: 2rem;">The proof is at github.com/jkraybill/myturnyourturn</p>
+        <p style="text-align: center; font-size: 1.6rem; margin-top: 20px;">46 tests. All passing. You can deploy it yourself right now.</p>
     </div>
-</div>
-
-<!-- Slide 15: Final -->
-<div class="slide">
-    <h1 style="font-size: 6rem;">Let's turn $25k into<br>$1-3M in value creation</h1>
-    <p class="subtitle" style="font-size: 2rem; margin-top: 40px;">Building sustainable advantages by respecting both capital and craftsmanship.</p>
-    <div class="emoji">🚀</div>
-    <div style="margin-top: 60px; font-size: 1.5rem; color: #666;">
-        <p>Repository: github.com/jkraybill/myturnyourturn</p>
-        <p style="margin-top: 10px;">JK: (you know how to reach me)</p>
-    </div>
+    <p style="margin-top: 60px; text-align: center; font-size: 1.4rem; color: #9ca3af;">JK: (you know how to reach me)</p>
 </div>
 
 <div class="slide-counter">
-    <span id="current-slide">1</span> / <span id="total-slides">15</span>
+    <span id="current-slide">1</span> / <span id="total-slides">13</span>
 </div>
 
 <div class="navigation">
