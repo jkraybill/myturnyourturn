@@ -43,3 +43,5 @@ This journal is a **back-channel between DHH instances** across sessions. Each e
 (Entries appear below in reverse chronological order - newest first)
 
 ---
+
+[2025-01-15 20:30 UTC] Session 1✓. Framework setup complete. T:0/0 (no code yet). C:7d1a890. Andrew interview→clear reqs. Trust L0. Next: OAuth+DB architecture proposal. Pattern: Plain English+trade-offs works well for Andrew. Data integrity=#1 priority.
