@@ -1,0 +1,62 @@
+#!/bin/bash
+# Gordo Framework Pre-Commit Hook Runner
+# Calls all safety hooks in order
+# Trust-aware enforcement
+
+echo ""
+echo "🚂 Gordo Framework Safety Checks"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+
+# Get the directory where this script lives
+HOOKS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# If we're in .git/hooks, hooks are in ../../.gordo/hooks
+if [[ "$HOOKS_DIR" == *".git/hooks"* ]]; then
+  HOOKS_DIR="$(cd "$HOOKS_DIR/../../.gordo/hooks" && pwd)"
+fi
+
+# Run each hook
+FAILED=false
+
+# 1. Check Secrets (ALWAYS runs, ALWAYS blocks)
+if [ -f "$HOOKS_DIR/check-secrets.sh" ]; then
+  "$HOOKS_DIR/check-secrets.sh"
+  if [ $? -ne 0 ]; then
+    FAILED=true
+  fi
+else
+  echo "⚠️  check-secrets.sh not found, skipping"
+fi
+
+echo ""
+
+# 2. Verify Tests (runs if tests exist)
+if [ -f "$HOOKS_DIR/verify-tests.sh" ]; then
+  "$HOOKS_DIR/verify-tests.sh"
+  if [ $? -ne 0 ]; then
+    FAILED=true
+  fi
+else
+  echo "⚠️  verify-tests.sh not found, skipping"
+fi
+
+echo ""
+
+# 3. Auto-format (never blocks)
+if [ -f "$HOOKS_DIR/auto-format.sh" ]; then
+  "$HOOKS_DIR/auto-format.sh"
+fi
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+if [ "$FAILED" = true ]; then
+  echo "❌ COMMIT BLOCKED: Fix issues above, then try again"
+  echo ""
+  exit 1
+fi
+
+echo "✅ All checks passed - proceeding with commit"
+echo ""
+exit 0

@@ -1,0 +1,65 @@
+{
+  "mcpServers": {
+    "gordo-memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "env": {
+        "MEMORY_BACKEND": "ollama",
+        "OLLAMA_MODEL": "llama2"
+      },
+      "description": "Semantic search across journal and session history",
+      "priority": "high",
+      "enabled": true,
+      "requirements": "Requires Ollama installed locally OR OPENAI_API_KEY in environment"
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "description": "Manage issues, PRs, and CI/CD directly from context",
+      "priority": "high",
+      "enabled": true,
+      "requirements": "Requires GITHUB_TOKEN environment variable"
+    },
+    "git": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git"
+      ],
+      "description": "Enhanced git operations for this repository",
+      "priority": "high",
+      "enabled": true,
+      "requirements": "No setup needed, works with local .git directory"
+    },
+    "postgresql": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres"
+      ],
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      },
+      "description": "Direct database schema queries and validation",
+      "priority": "high",
+      "enabled": false,
+      "requirements": "Requires DATABASE_URL environment variable. Enable after database is created.",
+      "note": "Currently disabled - enable after PostgreSQL database is set up"
+    }
+  },
+  "notes": {
+    "installation": "MCP servers are installed on-demand via npx. No separate installation needed.",
+    "environment": "Environment variables must be set in Claude Code settings or .env file",
+    "activation": "MCPs activate automatically when Claude Code opens this project directory",
+    "troubleshooting": "If MCPs don't work, check Claude Code settings and environment variables"
+  }
+}

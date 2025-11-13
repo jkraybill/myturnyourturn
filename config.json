@@ -1,0 +1,56 @@
+{
+  "project": {
+    "name": "MyTurnYourTurn",
+    "description": "Mobile-first web app for tracking whose turn it is to pay",
+    "repo": "https://github.com/jkraybill/myturnyourturn",
+    "intensity": "high-medium"
+  },
+  "collaboration": {
+    "ai_name": "DHH",
+    "human_name": "Andrew",
+    "human_role": "PM",
+    "ai_role": "Tech Co-founder"
+  },
+  "shortcuts": {
+    "railtorail": "Full autonomy granted - proceed with full trust",
+    "take_my_exact_direction": "Follow instructions precisely, no improvisation",
+    "go_back_one_step": "Undo/revert last action, redo it"
+  },
+  "healthCheckCadence": 14,
+  "upstreamContributions": {
+    "policy": "enabled",
+    "level": "maximum"
+  },
+  "provider": {
+    "primary": "claude-code",
+    "version": "0.8.0",
+    "features": {
+      "skills": true,
+      "mcp": true,
+      "subagents": true,
+      "codeExecution": true,
+      "autoReadCLAUDE": true
+    }
+  },
+  "techStack": {
+    "framework": "Next.js",
+    "database": "PostgreSQL",
+    "auth": ["Google OAuth", "Meta OAuth", "Apple OAuth"],
+    "testing": "Jest/Vitest (TDD)",
+    "deployment": "TBD (Vercel/Railway recommended)"
+  },
+  "qualityStandards": {
+    "tdd": "mandatory",
+    "dataIntegrity": "critical",
+    "uiStyle": "simple (Bendigo Bank inspired)",
+    "primaryColor": "British Racing Green"
+  },
+  "hooks": {
+    "enabled": true,
+    "installed": ["check-secrets", "verify-tests", "auto-format"]
+  },
+  "mcp": {
+    "enabled": true,
+    "servers": ["gordo-memory", "github", "git", "postgresql"]
+  }
+}
