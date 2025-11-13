@@ -1,11 +1,35 @@
 'use client'
 
 import { signIn } from 'next-auth/react'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export default function SignInPage() {
+  const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams?.get('callbackUrl') || '/dashboard'
+  const [loadingDemo, setLoadingDemo] = useState(false)
+
+  const handleDemoMode = async () => {
+    setLoadingDemo(true)
+    try {
+      const response = await fetch('/api/demo/start', {
+        method: 'POST',
+      })
+
+      if (!response.ok) {
+        alert('Failed to start demo mode')
+        setLoadingDemo(false)
+        return
+      }
+
+      // Redirect to dashboard
+      router.push('/dashboard')
+    } catch (error) {
+      alert('Failed to start demo mode')
+      setLoadingDemo(false)
+    }
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
@@ -65,6 +89,31 @@ export default function SignInPage() {
             Continue with Apple
           </button>
         </div>
+
+        <div className="relative my-8">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-300"></div>
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 bg-gray-50 text-gray-500">Or try it out</span>
+          </div>
+        </div>
+
+        <button
+          onClick={handleDemoMode}
+          disabled={loadingDemo}
+          className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 transition-colors text-lg font-medium disabled:opacity-50"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {loadingDemo ? 'Starting Demo...' : 'Try Demo Mode'}
+        </button>
+
+        <p className="text-sm text-gray-500 text-center mt-4">
+          Demo mode lets you explore the app with sample data - no login required!
+        </p>
 
         <p className="text-sm text-gray-500 text-center mt-8">
           By signing in, you agree to our Terms of Service and Privacy Policy

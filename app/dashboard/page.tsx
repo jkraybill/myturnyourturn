@@ -1,8 +1,8 @@
 import { redirect } from 'next/navigation'
-import { getCurrentUser } from '@/lib/session'
+import { getCurrentUser, isDemoMode } from '@/lib/session'
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
-import { signOut } from 'next-auth/react'
+import DemoModeBanner from '@/components/DemoModeBanner'
 
 export default async function DashboardPage() {
   const user = await getCurrentUser()
@@ -11,13 +11,15 @@ export default async function DashboardPage() {
     redirect('/auth/signin')
   }
 
+  const isDemo = await isDemoMode()
+
   // Get user's full profile
   const profile = await prisma.user.findUnique({
     where: { id: user.id },
   })
 
-  // If user hasn't set up their unique identifier, redirect to profile
-  if (!profile?.uniqueIdentifier) {
+  // If user hasn't set up their unique identifier, redirect to profile (skip for demo)
+  if (!isDemo && !profile?.uniqueIdentifier) {
     redirect('/profile/setup')
   }
 
@@ -62,6 +64,9 @@ export default async function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Demo Mode Banner */}
+      {isDemo && <DemoModeBanner />}
+
       {/* Header */}
       <header className="bg-british-racing-green text-white">
         <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">

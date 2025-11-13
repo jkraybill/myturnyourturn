@@ -1,9 +1,10 @@
 import { redirect } from 'next/navigation'
-import { getCurrentUser } from '@/lib/session'
+import { getCurrentUser, isDemoMode } from '@/lib/session'
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 import ToggleButton from '@/components/ToggleButton'
 import AddTrackForm from '@/components/AddTrackForm'
+import DemoModeBanner from '@/components/DemoModeBanner'
 
 export default async function RelationshipPage({
   params,
@@ -15,6 +16,8 @@ export default async function RelationshipPage({
   if (!user) {
     redirect('/auth/signin')
   }
+
+  const isDemo = await isDemoMode()
 
   const relationship = await prisma.relationship.findUnique({
     where: { id: params.id },
@@ -71,6 +74,9 @@ export default async function RelationshipPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Demo Mode Banner */}
+      {isDemo && <DemoModeBanner />}
+
       {/* Header */}
       <header className="bg-british-racing-green text-white">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
