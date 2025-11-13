@@ -44,4 +44,6 @@ This journal is a **back-channel between DHH instances** across sessions. Each e
 
 ---
 
+[2025-11-13 09:30 UTC] Session 2✓. Full app built. T:20/20✓. C:0c47bcd. railtorail→built NextJS+Prisma+OAuth+UI+tests. PostgreSQL setup→peer auth issue→set password✓. Pattern: TDD works, DB transactions critical for toggle integrity, all tests must pass before commit.
+
 [2025-01-15 20:30 UTC] Session 1✓. Framework setup complete. T:0/0 (no code yet). C:7d1a890. Andrew interview→clear reqs. Trust L0. Next: OAuth+DB architecture proposal. Pattern: Plain English+trade-offs works well for Andrew. Data integrity=#1 priority.
