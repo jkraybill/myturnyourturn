@@ -5,11 +5,11 @@ import { requireAuth } from '@/lib/session'
 // POST /api/tracks/[id]/toggle - Toggle whose turn it is
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const currentUser = await requireAuth()
-    const { id: trackId } = params
+    const { id: trackId } = await params
 
     // Use a transaction to ensure data integrity
     const result = await prisma.$transaction(async (tx) => {

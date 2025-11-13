@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default async function TrackPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
   const user = await getCurrentUser()
 
@@ -14,8 +14,10 @@ export default async function TrackPage({
     redirect('/auth/signin')
   }
 
+  const { id } = await params
+
   const track = await prisma.track.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: {
       relationship: {
         include: {

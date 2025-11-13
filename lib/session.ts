@@ -4,12 +4,14 @@ import { cookies } from 'next/headers'
 import { prisma } from './prisma'
 
 export async function isDemoMode() {
-  const demoMode = cookies().get('demo_mode')
+  const cookieStore = await cookies()
+  const demoMode = cookieStore.get('demo_mode')
   return demoMode?.value === 'true'
 }
 
 export async function getDemoUserFromCookie() {
-  const demoUserId = cookies().get('demo_user_id')
+  const cookieStore = await cookies()
+  const demoUserId = cookieStore.get('demo_user_id')
   if (!demoUserId) {
     return null
   }

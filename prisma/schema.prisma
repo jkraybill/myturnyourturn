@@ -108,7 +108,7 @@ model Track {
   updatedAt      DateTime     @updatedAt
 
   relationship Relationship @relation(fields: [relationshipId], references: [id], onDelete: Cascade)
-  currentTurnUser User @relation("CurrentTurnUser", fields: [currentTurnUserId], references: [id])
+  currentTurnUser User @relation("CurrentTurnUser", fields: [currentTurnUserId], references: [id], onDelete: Cascade)
 
   history History[]
 
@@ -124,8 +124,8 @@ model History {
   timestamp  DateTime @default(now())
 
   track    Track @relation(fields: [trackId], references: [id], onDelete: Cascade)
-  fromUser User  @relation("FromUser", fields: [fromUserId], references: [id])
-  toUser   User  @relation("ToUser", fields: [toUserId], references: [id])
+  fromUser User  @relation("FromUser", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUser   User  @relation("ToUser", fields: [toUserId], references: [id], onDelete: Cascade)
 
   @@index([trackId])
   @@index([timestamp])

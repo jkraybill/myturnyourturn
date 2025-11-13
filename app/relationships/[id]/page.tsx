@@ -2,14 +2,15 @@ import { redirect } from 'next/navigation'
 import { getCurrentUser, isDemoMode } from '@/lib/session'
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
-import ToggleButton from '@/components/ToggleButton'
+import TrackSlider from '@/components/TrackSlider'
 import AddTrackForm from '@/components/AddTrackForm'
 import DemoModeBanner from '@/components/DemoModeBanner'
+import DeleteTrackButton from '@/components/DeleteTrackButton'
 
 export default async function RelationshipPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
   const user = await getCurrentUser()
 
@@ -18,9 +19,10 @@ export default async function RelationshipPage({
   }
 
   const isDemo = await isDemoMode()
+  const { id } = await params
 
   const relationship = await prisma.relationship.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: {
       user1: {
         select: {
@@ -132,29 +134,24 @@ export default async function RelationshipPage({
                         : track.name.charAt(0).toUpperCase() +
                           track.name.slice(1)}
                     </h3>
-                    <Link
-                      href={`/tracks/${track.id}`}
-                      className="text-british-racing-green hover:underline text-sm"
-                    >
-                      View History
-                    </Link>
-                  </div>
-
-                  <div className="mb-4">
-                    <div
-                      className={`text-center py-3 px-4 rounded-lg ${
-                        isMyTurn
-                          ? 'bg-british-racing-green/10 text-british-racing-green'
-                          : 'bg-gray-100 text-gray-700'
-                      }`}
-                    >
-                      <span className="font-medium">
-                        {isMyTurn ? "It's your turn!" : "It's their turn"}
-                      </span>
+                    <div className="flex gap-3">
+                      <Link
+                        href={`/tracks/${track.id}`}
+                        className="text-british-racing-green hover:underline text-sm"
+                      >
+                        View History
+                      </Link>
+                      <DeleteTrackButton trackId={track.id} />
                     </div>
                   </div>
 
-                  <ToggleButton trackId={track.id} />
+                  <TrackSlider
+                    trackId={track.id}
+                    currentTurnUserId={track.currentTurnUserId}
+                    currentUserId={user.id}
+                    otherUserName={otherUser.nickname || otherUser.name || 'Friend'}
+                    currentUserName="You"
+                  />
                 </div>
               )
             })}

@@ -73,8 +73,16 @@ export default async function DashboardPage() {
           <h1 className="text-2xl font-bold">MyTurnYourTurn</h1>
           <Link
             href="/profile"
-            className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center"
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity"
           >
+            <div className="text-right">
+              <div className="text-sm font-medium">
+                {profile.nickname || profile.name}
+              </div>
+              <div className="text-xs text-white/80">
+                @{profile.uniqueIdentifier}
+              </div>
+            </div>
             {profile.image ? (
               <img
                 src={profile.image}
@@ -82,7 +90,9 @@ export default async function DashboardPage() {
                 className="w-10 h-10 rounded-full"
               />
             ) : (
-              <span className="text-lg">{profile.name?.[0] || '?'}</span>
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                <span className="text-lg">{profile.name?.[0] || '?'}</span>
+              </div>
             )}
           </Link>
         </div>

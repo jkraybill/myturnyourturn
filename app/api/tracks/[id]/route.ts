@@ -5,11 +5,11 @@ import { requireAuth } from '@/lib/session'
 // GET /api/tracks/[id] - Get track with history
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const currentUser = await requireAuth()
-    const { id } = params
+    const { id } = await params
 
     const track = await prisma.track.findUnique({
       where: { id },
@@ -89,11 +89,11 @@ export async function GET(
 // DELETE /api/tracks/[id] - Delete a track
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const currentUser = await requireAuth()
-    const { id } = params
+    const { id } = await params
 
     // Verify track exists and user is part of the relationship
     const track = await prisma.track.findUnique({

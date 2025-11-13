@@ -5,11 +5,11 @@ import { requireAuth } from '@/lib/session'
 // DELETE /api/relationships/[id] - Delete a relationship
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const currentUser = await requireAuth()
-    const { id } = params
+    const { id } = await params
 
     // Verify relationship exists and user is part of it
     const relationship = await prisma.relationship.findUnique({

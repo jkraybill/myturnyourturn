@@ -12,7 +12,8 @@ export async function POST() {
     const demoUser = await getDemoUser()
 
     // Set demo mode cookie
-    cookies().set('demo_mode', 'true', {
+    const cookieStore = await cookies()
+    cookieStore.set('demo_mode', 'true', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
@@ -20,7 +21,7 @@ export async function POST() {
     })
 
     // Set demo user ID cookie
-    cookies().set('demo_user_id', demoUser.id, {
+    cookieStore.set('demo_user_id', demoUser.id, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
